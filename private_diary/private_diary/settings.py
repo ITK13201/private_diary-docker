@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 作成した diary app
+    'diary.apps.DiaryConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,12 @@ WSGI_APPLICATION = 'private_diary.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': BASE_DIR / 'private_diary',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'Host': '',
+        'PORT': '',
     }
 }
 
@@ -103,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
@@ -118,3 +125,45 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# ロギング設定
+LOGING = {
+    'version': 1, # '1' const
+    'disable_existing_loggers': False,
+
+    # logger の設定
+    'loggers': {
+        # Django が利用するlogger
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        # diary app が利用するlogger
+        'diary': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+
+    # handler の設定
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'dev',
+        },
+    },
+
+    # formatter の設定
+    'formatters': {
+        'dev': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s',
+            ])
+        },
+    },
+}
