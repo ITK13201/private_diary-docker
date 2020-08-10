@@ -1,0 +1,12 @@
+{
+  "name": "private_diary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass scss/ --output css/ --output-style compressed --watch --source-map true"
+  },
+  "author": "",
+  "license": "ISC"
+}
