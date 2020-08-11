@@ -2,88 +2,72 @@
 
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{% block title %}{% end block %}</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Boostrap core CSS -->
-    <link
-      rel="stylesheet"
-      href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}"
-    />
+  <title>{% block title %}{% endblock %}</title>
 
-    <!-- Custom fonts for this template -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Boostrap core CSS -->
+  <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" />
 
-    <!-- My style -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/mystyle.css' %}"
-    />
+  <!-- Custom fonts for this template -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-    {% block head %}{% endblock %}
-  </head>
-  <body>
-    <div id="wrapper">
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'diary:index' %}"
-            >PRIVATE DIARY</a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item {% block active_inquiry %}{% endblock %}">
-                <a class="nav-link" href="#">INQUIRY</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
-              </li>
-            </ul>
-          </div>
+  <!-- My style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}" />
+
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'diary:index' %}">PRIVATE DIARY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% block active_inquiry %}{% endblock %}">
+              <a class="nav-link" href="#">INQUIRY</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log In</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      {% block header %}{% endblock %}
+    {% block header %}{% endblock %}
 
-      {% block contents %}{% endblock %}
+    {% block contents %}{% endblock %}
 
-      <!-- Footer -->
-      <footer class="py-5 bg-black">
-        <div class="container">
-          <p class="m-0 text-center text-white small">Copyright &copy; Private Diary 2019</p>
-        </div>
-        <!-- /.Container -->
-      </footer>
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Private Diary 2019</p>
+      </div>
+      <!-- /.Container -->
+    </footer>
 
-      <!-- Boostrap core JavasSript -->
-      <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    </div>
-  </body>
+    <!-- Boostrap core JavasSript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </div>
+</body>
+
 </html>
