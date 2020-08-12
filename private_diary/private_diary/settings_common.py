@@ -38,6 +38,8 @@ INSTALLED_APPS = [
 
     # 作成した diary app
     'diary.apps.DiaryConfig',
+    # 作成した accounts app
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
