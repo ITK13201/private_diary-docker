@@ -10,7 +10,7 @@
             "request": "launch",
             "stopOnEntry": false,
             "pythonPath": "${command:python.interpreterPath}",
-            "program": "${workspaceRoot}/manage.py",
+            "program": "${workspaceRoot}/private_diary/manage.py",
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
             "args": [
