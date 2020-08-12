@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'diary.apps.DiaryConfig',
     # 作成した accounts app
     'accounts.apps.AccountsConfig',
+
+    # allauth setting
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +147,28 @@ MESSAGE_TAGS = {
 
 # def custom user model
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# django-allauth で利用するdjango.contrib.sites を使うためにサイト識別番号用IDを設定
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    # 一般ユーザ用
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # 管理サイト用
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# メールアドレス認証に変更する設定
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+
+# サインアップにメールアドレス認証を挟むように設定
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+
+# ログイン/ログアウト後の遷移先を設定
+LOGIN_REDIRECT_URL = 'diary:index'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+
+# ログアウトリンクのクリック一発でログアウトする設定
+ACCOUNT_LOGOUT_ON_GET = True
