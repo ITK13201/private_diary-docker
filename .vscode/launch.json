@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Django",
+            "name": "Django-runserver",
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
@@ -25,6 +25,48 @@
                 "RedirectOutput",
                 "DjangoDebugging",
             ]
-        }
+        },
+        {
+            "name": "Django-makemigrations",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${command:python.interpreterPath}",
+            "program": "${workspaceRoot}/private_diary/manage.py",
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args": [
+                "makemigrations",
+            ],
+            "env": {},
+            "envFile": "${workspaceFolder}/.venv",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput",
+                "DjangoDebugging",
+            ]
+        },
+        {
+            "name": "Django-migrate",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${command:python.interpreterPath}",
+            "program": "${workspaceRoot}/private_diary/manage.py",
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args": [
+                "migrate",
+            ],
+            "env": {},
+            "envFile": "${workspaceFolder}/.venv",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput",
+                "DjangoDebugging",
+            ]
+        },
     ]
 }

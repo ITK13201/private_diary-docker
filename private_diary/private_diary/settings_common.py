@@ -139,3 +139,6 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+
+# def custom user model
+AUTH_USER_MODEL = 'accounts.CustomUser'
