@@ -5,12 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Django",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "stopOnEntry": false,
+            "pythonPath": "${command:python.interpreterPath}",
+            "program": "${workspaceRoot}/manage.py",
+            "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
-            "args": ["runserver"],
+            "args": [
+                "runserver",
+                "--noreload",
+            ],
+            "env": {},
+            "envFile": "${workspaceFolder}/.venv",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput",
+                "DjangoDebugging",
+            ]
         }
     ]
 }
