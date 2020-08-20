@@ -55,3 +55,20 @@ class DiaryCreateView(LoginRequiredMixin, generic.CreateView):
         diary.save()
         messages.success(self.request, '日記を作成しました。')
         return super().form_valid(form)
+
+
+class DiaryUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Diary
+    template_name = 'diary_update.html'
+    form_class = DiaryCreateFrom
+
+    def get_success_url(self):
+        return reverse_lazy('diary:diary_detail', kwargs={'pk': self.kwargs['pk']})
+    
+    def form_valid(self, form):
+        messages.success(self.request, '日記を更新しました。')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        messages.error(self.request, '日記の更新に失敗しました。')
+        return super().form_invalid(form)
