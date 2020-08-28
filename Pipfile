@@ -10,6 +10,7 @@ django = "*"
 psycopg2-binary = "*"
 django-allauth = "*"
 pillow = "*"
+selenium = "*"
 
 [requires]
 python_version = "3.8"
