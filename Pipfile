@@ -11,6 +11,8 @@ psycopg2-binary = "*"
 django-allauth = "*"
 pillow = "*"
 selenium = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
