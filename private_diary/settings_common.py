@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+
+    # cloudinary setting
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -163,3 +167,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # バックアップパッチ用
 BACKUP_PATH = 'backup/'
 NUM_SAVED_BACKUP = 30
+
+# cloudinary_storage setting
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'your_cloud_name',
+    'API_KEY': 'your_api_key',
+    'API_SECRET': 'your_api_secret'
+}
