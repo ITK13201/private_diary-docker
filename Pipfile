@@ -15,6 +15,7 @@ django-heroku = "*"
 gunicorn = "*"
 whitenoise = "*"
 django-cloudinary-storage = "*"
+sendgrid = "*"
 
 [requires]
 python_version = "3.8"
