@@ -20,7 +20,7 @@ from django.contrib.messages import constants as messages
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-ALLOWED_HOSTS = ['127.0.0.1', '*.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Quick-start development settings - unsuitable for production
