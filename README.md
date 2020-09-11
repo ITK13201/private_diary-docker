@@ -12,5 +12,5 @@ $ docker exec private_diary-docker_web_1 python manage.py migrate
 ## How to show logs
 
 ```bash
-docker-compose logs
+$ docker-compose logs
 ```
